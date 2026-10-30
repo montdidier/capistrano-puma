@@ -10,7 +10,7 @@ namespace :puma do
         else
           within current_path do
             with rails_env: fetch(:puma_env) do
-              execute :pumad, "-C config/puma.rb"
+              execute :pumad, "-C #{fetch(:puma_conf)}"
             end
           end
         end
