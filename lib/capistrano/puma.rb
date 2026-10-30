@@ -118,9 +118,10 @@ module Capistrano
       append :rvm_map_bins, 'puma', 'pumactl' if fetch(:rvm_map_bins)
 
       # Bundler integration
-      append :bundle_bins, 'puma', 'pumactl'
+      append :bundle_bins, 'puma', 'pumad', 'pumactl'
     end
   end
 end
 
+require 'capistrano/puma/daemon'
 require 'capistrano/puma/systemd'
